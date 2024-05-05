@@ -1,0 +1,112 @@
+
+@font-face {
+    font-family: "Roboto", sans-serif;
+  
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: "Noto Sans", sans-serif;
+    margin: 0 auto;
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #242229;
+  }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 80px; 
+}
+
+.header-title {
+    color: peachpuff;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.dropdown {
+    margin-left: 30px;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    color:peachpuff;
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    appearance: none;
+    outline: none;
+    overflow-y: auto;
+    font-size: 15px;
+}
+select::-ms-expand {
+    display: none;
+}
+
+option {
+    color:peachpuff;
+    cursor: pointer;
+    background-color: #24282f;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    row-gap: 50px;
+}
+
+span {
+    color: peachpuff;
+}
+.card {
+	perspective: 600px;
+    position: relative;
+	width: 270px;
+    height: 420px;
+    border-radius: 8px;
+	box-shadow: 0px 8px 27px -5px rgba(0, 0, 0, 0.82);
+	cursor: pointer;
+	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.card img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+	border: none;
+    z-index: -1;
+    position: absolute;
+}
+.drawn_content {
+    height: 400px;
+    color: white;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+.title {
+    font-size: 12px;
+    color: white;
+    padding: 0 10px;
+    margin-bottom: 2px; 
+    padding-left: 10px; 
+}
+.title:nth-child(8){
+    margin-bottom: 10px;
+}
+h1 {
+    font-size: 20px;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
