@@ -53,7 +53,7 @@ dropDownBlock.addEventListener('change', (e) => {
         }))
         .catch(error => console.log(error.message));
 })
-fetch('./../dbHeroes.json').then((response) => response.json())
+fetch('./../dbHeroes.json').then((res) => res.json())
     .then((data) => {
         //коллекция фильмов
         const movies = new Set()
