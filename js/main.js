@@ -1,8 +1,8 @@
 const dropDownBlock = document.querySelector('.header-container .dropdown')
 
-const renderMoviesList = ( movie) => {
+const renderMoviesList = (movie) => {
     //выбор фильма
-    movie.forEach((item )=> {
+    movie.forEach((item) => {
         dropDownBlock.insertAdjacentHTML('beforeend', `
        
         <option value="${item}">${item}</option>
@@ -11,7 +11,6 @@ const renderMoviesList = ( movie) => {
 }
 const createCard = (item) => {
     const cards = document.querySelector('.wrapper');
-    console.log(cards);
     const card = document.createElement('div');
 
     card.innerHTML = `
@@ -31,16 +30,16 @@ const createCard = (item) => {
         </div>`;
     cards.appendChild(card);
 }
-fetch('./dbHeroes.json')
+fetch('./../dbHeroes.json')
     .then(res => res.json())
     .then(result => result.forEach(item => createCard(item)))
     .catch(error => console.log(error.message));
 
-    dropDownBlock.addEventListener('change', (e) => {
+dropDownBlock.addEventListener('change', (e) => {
 
     const cards = document.querySelector('.wrapper');
     cards.innerHTML = '';
-    fetch('./dbHeroes.json')
+    fetch('./../dbHeroes.json')
         .then(res => res.json())
         .then(result => result.forEach(item => {
             if (item.movies) {
@@ -54,22 +53,20 @@ fetch('./dbHeroes.json')
         }))
         .catch(error => console.log(error.message));
 })
-
-
-
-
 fetch('./../dbHeroes.json').then((response) => response.json())
-.then((data) => {
-    //коллекция фильмов
-    const movies = new Set()
-    data.forEach((item) => {
-        movies.add(item.movies)
-    })
-    let movie=Array.from(movies)
-   movie= movie.flat();
-  movie = [...new Set(movie)];
-   console.log(movies);
- console.log(movie[0]);
+    .then((data) => {
+        //коллекция фильмов
+        const movies = new Set()
+        data.forEach((item) => {
+            movies.add(item.movies)
+        })
+        let movie = Array.from(movies)
+        movie = movie.flat();
+        movie = [...new Set(movie)];
+        let valueToRemove = undefined;
+        movie = movie.filter(item => item !== valueToRemove);
+        //    console.log(movies);
+        //  console.log(movie);
 
-    renderMoviesList(movie)
-})
+        renderMoviesList(movie)
+    })
